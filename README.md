@@ -83,14 +83,12 @@ python scripts/run_all.py --quick  # 40 seeds, smoke test, does not overwrite re
 pytest -q tests                    # window/lag, no-lookahead, and metric checks
 ```
 
-## Resume lines that survive the follow-up
-
-Use these. Do not use a line that quotes a single-seed Sharpe or omits the word simulated.
+## Results
 
 - Ken French 49 industries, 1970–2026: built a lagged 12–1 momentum test with rolling estimated betas and Newey–West/bootstrap inference; raw and beta-residual rank ICs were both about 0.05 (NW t > 4) with no reliable difference (paired Sharpe-gap 95% CI [−0.10, 0.22]), and the edge weakened after 2000 (net Sharpe 0.23 raw, 0.38 residual).
 - Simulation harness for a pre-committed keep/reject rule (200 seeds): false-keep rate at most 4.5% under no signal; at a mid planted signal, residual-momentum power 82.5% vs 59.5% for raw at realistic size-factor vol, widening to 73.5% vs 15.5% under heavy contamination.
 
-## What this is not
+## Future Improvements
 
 - Not stock-level CRSP. Survivorship-free single names are the next step; yfinance on today's S&P 500 is the wrong substitute unless survivorship bias is stated in the first sentence.
 - Not a search over horizons, skip months, or factor sets. Adding those without a multiple-testing note would make the t-stats meaningless.
